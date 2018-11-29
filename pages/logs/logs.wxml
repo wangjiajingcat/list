@@ -1,0 +1,16 @@
+<!--logs.wxml-->
+<input name="input" placeholder='请输入您要查询的内容' bindblur="getContent"/>
+<view wx:for="{{info}}" class="top">
+  <view>
+    <text>标题</text>：{{index}}---{{item.title}}</view>
+  <view>
+    <text>添加时间</text>：{{item.addtime}}
+  </view>
+  <view class="bottom">
+    <text>内容</text>：{{item.content}}
+  <navigator url="/pages/info/info?id={{item.id}}">
+  <image mode="aspectFit" src="http://blog.oajing.com{{item.photo}}"></image>
+  </navigator>
+</view>
+</view>
+<view hidden="{{isShow}}">您加载的内容已经到底部了哦！！</view>
